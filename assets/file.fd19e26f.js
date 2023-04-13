@@ -1,1 +1,0 @@
-import{m as r}from"./index.ff593085.js";function u(e){return r.get({url:"/file/get",params:{path:e},responseType:"blob"})}function i(e){return new Promise((n,o)=>{u(e).then(t=>{n(URL.createObjectURL(t))}).catch(t=>o(t))})}function l(e){return r.post({url:"/file/upload",data:e})}export{i as g,l as u};

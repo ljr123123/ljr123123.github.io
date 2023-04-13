@@ -1,1 +1,0 @@
-import{_ as e,o,c as r}from"./index.e8d0637a.js";const t={name:"Score",props:{},data(){return{}},methods:{},mounted(){}},s={class:"score"};function c(a,n,_,p,d,m){return o(),r("div",s," \u4F5C\u54C1\u8BC4\u5206 ")}var i=e(t,[["render",c]]);export{i as default};
