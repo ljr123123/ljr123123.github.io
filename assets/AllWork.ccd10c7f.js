@@ -1,0 +1,1 @@
+import{_ as e,o,c as r}from"./index.e8d0637a.js";const t={name:"AllWork",props:{},data(){return{}},methods:{},mounted(){}},s={class:"review"};function a(c,n,_,p,d,l){return o(),r("div",s," \u6240\u6709\u4F5C\u54C1 ")}var m=e(t,[["render",a]]);export{m as default};

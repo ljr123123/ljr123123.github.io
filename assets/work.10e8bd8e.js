@@ -1,0 +1,1 @@
+import{m as t}from"./index.ff593085.js";function o(e){return t.get({url:"/work/contest/list",params:{contestId:e.contestId,pageNum:e.pageNum,pageSize:e.pageSize}})}function s(e){return t.get({url:"/work/detail",params:{workId:e}})}function a(e){return t.get({url:"/work/contest/prized",params:{contestId:e}})}export{o as a,a as g,s as w};
