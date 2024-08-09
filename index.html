@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PEat</title>
-    <script type="module" crossorigin src="/assets/index-13d66434.js"></script>
-    <link rel="stylesheet" href="/assets/index-0861f067.css">
-  </head>
-  <body>
-    <div id="app"></div>
-    
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新月我是你爹地</title>
+    <style>
+        *{
+            transition: all 0.5s;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0;
+            height:100vh;
+            width:100vw;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">新月宝贝七夕快乐呀！</h1>
+    <h1 id="123" align="center"></h1>
+    <img src="https://imgos.cn/2024/08/09/66b6291e2e83d.jpg"/>
+    <script>
+        setInterval(() => {
+            // 获取当前日期和时间  
+            const now = new Date();
+
+            // 获取当前年份  
+            const currentYear = now.getFullYear();
+
+            // 创建一个表示今年9月26日00:00的日期对象  
+            const targetDate = new Date(currentYear, 8, 26); // 注意月份是从0开始的，所以9月是8  
+
+            // 计算两个日期之间的差值（毫秒）  
+            const diff = now - targetDate;
+
+            // 将毫秒差值转换为秒  
+            const diffInSeconds = Math.round(diff / 1000);
+
+            // 输出结果  
+            document.getElementById("123").innerHTML = `距离100天纪念日还有 ${-diffInSeconds} 秒`;
+        }, 1000);
+    </script>
+</body>
+
 </html>
