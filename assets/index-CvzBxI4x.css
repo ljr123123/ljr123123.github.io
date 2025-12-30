@@ -1,0 +1,1 @@
+html,body,#app{margin:0;height:100%;width:100%}.app{height:100%;width:100%}.fade-enter-active{animation:fade 1s}.fade-leave-active{animation:fade 1s reverse}@keyframes fade{0%{opacity:0}to{opacity:1}}
