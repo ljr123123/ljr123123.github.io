@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第 9 周：回测引擎与交易成本 · 量化学习周计划</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/config.js" defer onerror="void 0"></script>
+  <script src="assets/deploy.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="index.html" style="color:inherit;text-decoration:none">量化学习周计划</a></h1>
+    <div class="header-actions">
+      <span id="deploy-status" class="deploy-status"></span>
+      <button id="deploy-btn" class="btn-deploy" type="button" onclick="triggerPagesUpdate()">
+        更新 GitHub Pages
+      </button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html" class="nav-link">索引</a>
+        <a href="week-01.html" class="nav-link">第 1 周</a>
+        <a href="week-02.html" class="nav-link">第 2 周</a>
+        <a href="week-03.html" class="nav-link">第 3 周</a>
+        <a href="week-04.html" class="nav-link">第 4 周</a>
+        <a href="week-05.html" class="nav-link">第 5 周</a>
+        <a href="week-06.html" class="nav-link">第 6 周</a>
+        <a href="week-07.html" class="nav-link">第 7 周</a>
+        <a href="week-08.html" class="nav-link">第 8 周</a>
+        <a href="week-09.html" class="nav-link active">第 9 周</a>
+        <a href="week-10.html" class="nav-link">第 10 周</a>
+        <a href="week-11.html" class="nav-link">第 11 周</a>
+        <a href="week-12.html" class="nav-link">第 12 周</a>
+        <a href="week-13.html" class="nav-link">第 13 周</a>
+        <a href="week-14.html" class="nav-link">第 14 周</a>
+        <a href="week-15.html" class="nav-link">第 15 周</a>
+      </nav>
+    </aside>
+    <main class="content">
+<h1>第 9 周：回测引擎与交易成本</h1>
+<blockquote>
+<p><strong>阶段</strong>：phase-04-backtest | <strong>预计总时长</strong>：约 22h</p>
+</blockquote>
+<h2>本周目标</h2>
+<p>搭建基础回测引擎，建模 A 股交易成本，建立前视偏差自查习惯。</p>
+<h2>验收标准</h2>
+<ul>
+<li>[ ] <code>engine.py</code> 支持日频调仓回测（T+1 成交假设）</li>
+<li>[ ] <code>costs.py</code> 含佣金、印花税（卖出）、滑点</li>
+<li>[ ] 笔记：向量化回测 vs 事件驱动回测对比</li>
+</ul>
+<h2>每日安排</h2>
+<h3>周一（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>阅读向量化回测 vs 事件驱动回测优劣</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>确定本仓库方案：先事件驱动骨架（便于加 T+1 约束）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周二（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>回测状态机：持仓、现金、净值、每日 PnL</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>调仓逻辑：信号日收盘 → 次日开盘/收盘成交</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周三（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现 <code>engine.py</code> 核心循环</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周四（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>A 股成本：佣金（双向）、印花税（卖出 0.05% 左右，以当时政策为准）、滑点</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>涨跌停无法成交的简化处理</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周五（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现 <code>costs.py</code> 并接入 engine</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周六（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3h</td>
+<td>用阶段 2 动量因子 + 阶段 3 等权组合跑通 1 年回测</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>前视偏差自查：因子滞后、财务公告日、复权点</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>撰写 <code>docs/backtest-checklist.md</code> 草稿</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>参考 backtrader 源码结构（学习设计模式）</td>
+</tr>
+</tbody>
+</table>
+<h3>周日（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2h</td>
+<td>周总结：回测中最易犯的 3 个错误</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>预习：夏普、Calmar、换手率指标</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>检查 engine 接口是否便于后续迁入 <code>integration/</code></td>
+</tr>
+</tbody>
+</table>
+<h2>常见陷阱</h2>
+<ul>
+<li>用未来数据计算因子</li>
+<li>未按公告日滞后使用财务数据</li>
+<li>忽略 T+1 导致当日买卖同一只股票</li>
+</ul>
+<h2>产出清单</h2>
+<table>
+<thead>
+<tr>
+<th>产出</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>回测引擎</td>
+<td><code>code/phase-04-backtest/engine.py</code></td>
+</tr>
+<tr>
+<td>成本模型</td>
+<td><code>code/phase-04-backtest/costs.py</code></td>
+</tr>
+<tr>
+<td>自查清单</td>
+<td><code>docs/backtest-checklist.md</code></td>
+</tr>
+<tr>
+<td>对比笔记</td>
+<td><code>learning-logs/</code></td>
+</tr>
+</tbody>
+</table>
+    </main>
+  </div>
+  <footer class="site-footer">
+    由 <code>scripts/build_plan_site.py</code> 生成 ·
+    源文件 <code>docs/plan/</code> ·
+    构建时间 2026-06-07 08:15 UTC
+  </footer>
+  <div id="deploy-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2>更新 GitHub Pages</h2>
+      <div id="deploy-modal-body"></div>
+      <div class="modal-actions">
+        <button type="button" onclick="closeDeployModal()">关闭</button>
+        <button type="button" class="primary" onclick="closeDeployModal()">知道了</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

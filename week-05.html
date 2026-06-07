@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第 5 周：IC 分析与分层回测 · 量化学习周计划</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/config.js" defer onerror="void 0"></script>
+  <script src="assets/deploy.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="index.html" style="color:inherit;text-decoration:none">量化学习周计划</a></h1>
+    <div class="header-actions">
+      <span id="deploy-status" class="deploy-status"></span>
+      <button id="deploy-btn" class="btn-deploy" type="button" onclick="triggerPagesUpdate()">
+        更新 GitHub Pages
+      </button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html" class="nav-link">索引</a>
+        <a href="week-01.html" class="nav-link">第 1 周</a>
+        <a href="week-02.html" class="nav-link">第 2 周</a>
+        <a href="week-03.html" class="nav-link">第 3 周</a>
+        <a href="week-04.html" class="nav-link">第 4 周</a>
+        <a href="week-05.html" class="nav-link active">第 5 周</a>
+        <a href="week-06.html" class="nav-link">第 6 周</a>
+        <a href="week-07.html" class="nav-link">第 7 周</a>
+        <a href="week-08.html" class="nav-link">第 8 周</a>
+        <a href="week-09.html" class="nav-link">第 9 周</a>
+        <a href="week-10.html" class="nav-link">第 10 周</a>
+        <a href="week-11.html" class="nav-link">第 11 周</a>
+        <a href="week-12.html" class="nav-link">第 12 周</a>
+        <a href="week-13.html" class="nav-link">第 13 周</a>
+        <a href="week-14.html" class="nav-link">第 14 周</a>
+        <a href="week-15.html" class="nav-link">第 15 周</a>
+      </nav>
+    </aside>
+    <main class="content">
+<h1>第 5 周：IC 分析与分层回测</h1>
+<blockquote>
+<p><strong>阶段</strong>：phase-02-factors | <strong>预计总时长</strong>：约 22h</p>
+</blockquote>
+<h2>本周目标</h2>
+<p>掌握 IC / Rank IC 检验与五分组（quintile）分层回测，完成动量因子实证报告。</p>
+<h2>验收标准</h2>
+<ul>
+<li>[ ] <code>factor_test.py</code> 输出 IC 时序图、IC 均值与 IR（IC_mean / IC_std）</li>
+<li>[ ] 五分组多空累计收益曲线</li>
+<li>[ ] 500 字研究结论写入 <code>learning-logs/</code></li>
+</ul>
+<h2>每日安排</h2>
+<h3>周一（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>学习 IC：因子值与<strong>下期</strong>收益的截面相关系数</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>Rank IC：用秩相关，对异常值更稳健</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周二（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现 IC 计算：按日截面 corr，聚合 IC 均值/IR</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周三（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>分层回测原理：按因子值分 5 组，组内等权，看 Q5-Q1 多空</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>注意：分组用 t 日因子，收益从 t+1 开始（避免前视）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周四（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现五分组回测与多空组合收益</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周五（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>绘制 IC 时序图、五分组累计收益图</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>初步解读：动量是否有效？IC 是否稳定？</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周六（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3h</td>
+<td>完善 <code>factor_test.py</code>：支持任意因子输入、参数化持有期</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>撰写 500 字动量因子研究报告</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>对比不同 lookback（20/60/120 日）的 IC 差异</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>阅读 Barra 因子模型入门资料（风格因子概念）</td>
+</tr>
+</tbody>
+</table>
+<h3>周日（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2h</td>
+<td>阶段 2 中期自测：能口述 IC 与分层回测流程</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>周总结</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>预习：价值因子（EP/BP）与财务数据滞后问题</td>
+</tr>
+</tbody>
+</table>
+<h2>核心公式</h2>
+<ul>
+<li><strong>IC</strong>：(\text{corr}(f_{i,t}, r_{i,t+1}))</li>
+<li><strong>IR</strong>：(\text{IC}<em>{\text{mean}} / \text{IC}</em>{\text{std}})</li>
+<li><strong>多空收益</strong>：最高组收益 − 最低组收益</li>
+</ul>
+<h2>产出清单</h2>
+<table>
+<thead>
+<tr>
+<th>产出</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>因子检验</td>
+<td><code>code/phase-02-factors/factor_test.py</code></td>
+</tr>
+<tr>
+<td>IC 图 / 分层图</td>
+<td><code>data/phase-02/figures/</code> 或日志附图</td>
+</tr>
+<tr>
+<td>研究报告</td>
+<td><code>learning-logs/</code></td>
+</tr>
+</tbody>
+</table>
+    </main>
+  </div>
+  <footer class="site-footer">
+    由 <code>scripts/build_plan_site.py</code> 生成 ·
+    源文件 <code>docs/plan/</code> ·
+    构建时间 2026-06-07 08:15 UTC
+  </footer>
+  <div id="deploy-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2>更新 GitHub Pages</h2>
+      <div id="deploy-modal-body"></div>
+      <div class="modal-actions">
+        <button type="button" onclick="closeDeployModal()">关闭</button>
+        <button type="button" class="primary" onclick="closeDeployModal()">知道了</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

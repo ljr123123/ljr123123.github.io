@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第 11 周：再平衡与换手控制 · 量化学习周计划</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/config.js" defer onerror="void 0"></script>
+  <script src="assets/deploy.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="index.html" style="color:inherit;text-decoration:none">量化学习周计划</a></h1>
+    <div class="header-actions">
+      <span id="deploy-status" class="deploy-status"></span>
+      <button id="deploy-btn" class="btn-deploy" type="button" onclick="triggerPagesUpdate()">
+        更新 GitHub Pages
+      </button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html" class="nav-link">索引</a>
+        <a href="week-01.html" class="nav-link">第 1 周</a>
+        <a href="week-02.html" class="nav-link">第 2 周</a>
+        <a href="week-03.html" class="nav-link">第 3 周</a>
+        <a href="week-04.html" class="nav-link">第 4 周</a>
+        <a href="week-05.html" class="nav-link">第 5 周</a>
+        <a href="week-06.html" class="nav-link">第 6 周</a>
+        <a href="week-07.html" class="nav-link">第 7 周</a>
+        <a href="week-08.html" class="nav-link">第 8 周</a>
+        <a href="week-09.html" class="nav-link">第 9 周</a>
+        <a href="week-10.html" class="nav-link">第 10 周</a>
+        <a href="week-11.html" class="nav-link active">第 11 周</a>
+        <a href="week-12.html" class="nav-link">第 12 周</a>
+        <a href="week-13.html" class="nav-link">第 13 周</a>
+        <a href="week-14.html" class="nav-link">第 14 周</a>
+        <a href="week-15.html" class="nav-link">第 15 周</a>
+      </nav>
+    </aside>
+    <main class="content">
+<h1>第 11 周：再平衡与换手控制</h1>
+<blockquote>
+<p><strong>阶段</strong>：phase-05-execution | <strong>预计总时长</strong>：约 20h</p>
+</blockquote>
+<h2>本周目标</h2>
+<p>理解从信号到调仓的落地节奏，实现再平衡逻辑与换手控制策略。</p>
+<h2>验收标准</h2>
+<ul>
+<li>[ ] <code>rebalance.py</code> 支持日/周/月再平衡频率配置</li>
+<li>[ ] 换手惩罚或阈值实验：对比不同再平衡频率的净收益</li>
+<li>[ ] 笔记：低频策略为何关注换手而非毫秒级延迟</li>
+</ul>
+<h2>每日安排</h2>
+<h3>周一（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>再平衡频率权衡：信号衰减 vs 交易成本</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>阅读 Grinold &amp; Kahn 关于实施短fall（implementation shortfall）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周二（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现 <code>rebalance.py</code>：基于目标权重与当前持仓生成订单</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周三（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>换手控制：仅当权重偏离 &gt; 阈值才交易</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>最小交易单位（100 股整数倍）简化处理</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周四（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>订单拆分概念：大单对价格的冲击（简化线性模型）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>阅读市场微观结构入门（Kyle 1985 摘要即可）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周五（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实验：日频 vs 周频 vs 月频再平衡绩效对比</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周六（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3h</td>
+<td>将再平衡模块接入阶段 4 回测引擎</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>输出不同频率的夏普/换手/成本对比表</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>调研券商 API：QMT、掘金、华泰等（记录接口能力）</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>撰写合规与风控清单草稿</td>
+</tr>
+</tbody>
+</table>
+<h3>周日（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2h</td>
+<td>周总结</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>预习纸面交易流程</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>整理券商调研笔记至 <code>learning-logs/</code></td>
+</tr>
+</tbody>
+</table>
+<h2>产出清单</h2>
+<table>
+<thead>
+<tr>
+<th>产出</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>再平衡</td>
+<td><code>code/phase-05-execution/rebalance.py</code></td>
+</tr>
+<tr>
+<td>频率实验报告</td>
+<td><code>learning-logs/</code></td>
+</tr>
+<tr>
+<td>券商调研</td>
+<td><code>learning-logs/</code></td>
+</tr>
+<tr>
+<td>风控清单草稿</td>
+<td><code>docs/risk-compliance-checklist.md</code>（可选）</td>
+</tr>
+</tbody>
+</table>
+    </main>
+  </div>
+  <footer class="site-footer">
+    由 <code>scripts/build_plan_site.py</code> 生成 ·
+    源文件 <code>docs/plan/</code> ·
+    构建时间 2026-06-07 08:15 UTC
+  </footer>
+  <div id="deploy-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2>更新 GitHub Pages</h2>
+      <div id="deploy-modal-body"></div>
+      <div class="modal-actions">
+        <button type="button" onclick="closeDeployModal()">关闭</button>
+        <button type="button" class="primary" onclick="closeDeployModal()">知道了</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

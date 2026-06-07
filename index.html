@@ -1,14 +1,212 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/cat.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>喵~</title>
-    <script type="module" crossorigin src="/assets/index-C74Qeskp.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CvzBxI4x.css">
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>量化学习周计划索引 · 量化学习周计划</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/config.js" defer onerror="void 0"></script>
+  <script src="assets/deploy.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="index.html" style="color:inherit;text-decoration:none">量化学习周计划</a></h1>
+    <div class="header-actions">
+      <span id="deploy-status" class="deploy-status"></span>
+      <button id="deploy-btn" class="btn-deploy" type="button" onclick="triggerPagesUpdate()">
+        更新 GitHub Pages
+      </button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html" class="nav-link active">索引</a>
+        <a href="week-01.html" class="nav-link">第 1 周</a>
+        <a href="week-02.html" class="nav-link">第 2 周</a>
+        <a href="week-03.html" class="nav-link">第 3 周</a>
+        <a href="week-04.html" class="nav-link">第 4 周</a>
+        <a href="week-05.html" class="nav-link">第 5 周</a>
+        <a href="week-06.html" class="nav-link">第 6 周</a>
+        <a href="week-07.html" class="nav-link">第 7 周</a>
+        <a href="week-08.html" class="nav-link">第 8 周</a>
+        <a href="week-09.html" class="nav-link">第 9 周</a>
+        <a href="week-10.html" class="nav-link">第 10 周</a>
+        <a href="week-11.html" class="nav-link">第 11 周</a>
+        <a href="week-12.html" class="nav-link">第 12 周</a>
+        <a href="week-13.html" class="nav-link">第 13 周</a>
+        <a href="week-14.html" class="nav-link">第 14 周</a>
+        <a href="week-15.html" class="nav-link">第 15 周</a>
+      </nav>
+    </aside>
+    <main class="content">
+<h1>量化学习周计划索引</h1>
+<blockquote>
+<p>基于 <a href="https://github.com/ljr123123/quantitative-trading/blob/main/docs/learning-plan.md">learning-plan.md</a> 拆分的 <strong>15 周</strong>执行计划。<br />
+最后更新：2026-06-07</p>
+</blockquote>
+<h2>时间预算规则</h2>
+<table>
+<thead>
+<tr>
+<th>时段</th>
+<th>每日上限</th>
+<th>每周上限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>周一至周五</td>
+<td><strong>≤ 2h</strong></td>
+<td>≤ 10h</td>
+</tr>
+<tr>
+<td>周六、周日</td>
+<td><strong>≤ 8h</strong></td>
+<td>≤ 16h</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td>—</td>
+<td><strong>≤ 26h</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>工作日以「概念理解 + 小步编码」为主，避免大块重构。</li>
+<li>周末集中做模块整合、验收与周总结。</li>
+<li>每日在 <code>learning-logs/YYYY-MM/YYYY-MM-DD.md</code> 记录实际投入时间。</li>
+</ul>
+<h2>阶段与周次映射</h2>
+<div class="highlight"><pre><span></span><code><span class="n">周次</span><span class="w">  </span><span class="mi">1</span><span class="w">    </span><span class="mi">2</span><span class="w">    </span><span class="mi">3</span><span class="w">    </span><span class="mi">4</span><span class="w">    </span><span class="mi">5</span><span class="w">    </span><span class="mi">6</span><span class="w">    </span><span class="mi">7</span><span class="w">    </span><span class="mi">8</span><span class="w">    </span><span class="mi">9</span><span class="w">   </span><span class="mi">10</span><span class="w">   </span><span class="mi">11</span><span class="w">   </span><span class="mi">12</span><span class="w">   </span><span class="mi">13</span><span class="w">   </span><span class="mi">14</span><span class="w">   </span><span class="mi">15</span>
+<span class="w">      </span><span class="o">[</span><span class="n">P0</span><span class="o">][</span><span class="n">---- P1 ----</span><span class="o">][</span><span class="n">------ P2 ------</span><span class="o">][</span><span class="n">-- P3 --</span><span class="o">][</span><span class="n">-- P4 --</span><span class="o">][</span><span class="n">-- P5 --</span><span class="o">][</span><span class="n">-- P6 --</span><span class="o">]</span>
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>周次</th>
+<th>阶段</th>
+<th>主题</th>
+<th>文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>环境与工具链</td>
+<td><a href="week-01.html">week-01.md</a></td>
+</tr>
+<tr>
+<td>2–3</td>
+<td>1</td>
+<td>市场与数据基础</td>
+<td><a href="week-02.html">week-02.md</a> · <a href="week-03.html">week-03.md</a></td>
+</tr>
+<tr>
+<td>4–6</td>
+<td>2</td>
+<td>统计学与因子研究</td>
+<td><a href="week-04.html">week-04.md</a> · <a href="week-05.html">week-05.md</a> · <a href="week-06.html">week-06.md</a></td>
+</tr>
+<tr>
+<td>7–8</td>
+<td>3</td>
+<td>组合与风险管理</td>
+<td><a href="week-07.html">week-07.md</a> · <a href="week-08.html">week-08.md</a></td>
+</tr>
+<tr>
+<td>9–10</td>
+<td>4</td>
+<td>回测与绩效评估</td>
+<td><a href="week-09.html">week-09.md</a> · <a href="week-10.html">week-10.md</a></td>
+</tr>
+<tr>
+<td>11–12</td>
+<td>5</td>
+<td>执行与实盘准备</td>
+<td><a href="week-11.html">week-11.md</a> · <a href="week-12.html">week-12.md</a></td>
+</tr>
+<tr>
+<td>13–15</td>
+<td>6</td>
+<td>整合项目</td>
+<td><a href="week-13.html">week-13.md</a> · <a href="week-14.html">week-14.md</a> · <a href="week-15.html">week-15.md</a></td>
+</tr>
+</tbody>
+</table>
+<h2>使用方式</h2>
+<ol>
+<li><strong>开周</strong>：阅读当周 <code>week-NN.md</code>，在日志中写下本周验收目标。</li>
+<li><strong>每日</strong>：按当日安排执行，勾选完成项，记录 <code>#todo</code> 与卡点。</li>
+<li><strong>周末</strong>：完成周验收清单，写 <code>learning-logs/YYYY-MM/week-NN-summary.md</code>。</li>
+<li><strong>延期</strong>：在职学习可将 15 周延长至 20–24 周，按阶段整块顺延，勿跳验收。</li>
+</ol>
+<h2>通用产出路径</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每日日志</td>
+<td><code>learning-logs/YYYY-MM/YYYY-MM-DD.md</code></td>
+</tr>
+<tr>
+<td>周总结</td>
+<td><code>learning-logs/YYYY-MM/week-NN-summary.md</code></td>
+</tr>
+<tr>
+<td>阶段代码</td>
+<td><code>code/phase-XX-*/</code></td>
+</tr>
+<tr>
+<td>数据</td>
+<td><code>data/phase-XX/</code></td>
+</tr>
+<tr>
+<td>整合项目</td>
+<td><code>integration/</code></td>
+</tr>
+</tbody>
+</table>
+<h2>弹性调整</h2>
+<ul>
+<li>某周未完成验收：<strong>不进入下周</strong>，用下一周前半段补课。</li>
+<li>工作日加班：将编码任务挪至周六上午，保持周末总时长 ≤16h。</li>
+<li>已掌握某知识点：跳过阅读，把时间投入验收产出。</li>
+</ul>
+<h2>HTML 站点与 GitHub Pages</h2>
+<p>Markdown 可通过构建脚本渲染为 HTML，并发布到 <a href="https://ljr123123.github.io/">ljr123123.github.io</a>：</p>
+<div class="highlight"><pre><span></span><code><span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="p">-</span><span class="n">-init</span> <span class="n">github-pages</span>
+<span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">push_pages_site</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+
+<ul>
+<li>构建输出：<code>site/plan/</code></li>
+<li>Pages submodule：<code>github-pages/</code> → <code>ljr123123/ljr123123.github.io</code></li>
+<li>详细说明：<a href="https://github.com/ljr123123/quantitative-trading/blob/main/docs/../site/plan/README.md">site/plan/README.md</a></li>
+</ul>
+    </main>
+  </div>
+  <footer class="site-footer">
+    由 <code>scripts/build_plan_site.py</code> 生成 ·
+    源文件 <code>docs/plan/</code> ·
+    构建时间 2026-06-07 08:15 UTC
+  </footer>
+  <div id="deploy-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2>更新 GitHub Pages</h2>
+      <div id="deploy-modal-body"></div>
+      <div class="modal-actions">
+        <button type="button" onclick="closeDeployModal()">关闭</button>
+        <button type="button" class="primary" onclick="closeDeployModal()">知道了</button>
+      </div>
+    </div>
+  </div>
+</body>
 </html>

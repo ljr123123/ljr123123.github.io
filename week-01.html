@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第 1 周：环境与工具链 · 量化学习周计划</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/config.js" defer onerror="void 0"></script>
+  <script src="assets/deploy.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="index.html" style="color:inherit;text-decoration:none">量化学习周计划</a></h1>
+    <div class="header-actions">
+      <span id="deploy-status" class="deploy-status"></span>
+      <button id="deploy-btn" class="btn-deploy" type="button" onclick="triggerPagesUpdate()">
+        更新 GitHub Pages
+      </button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html" class="nav-link">索引</a>
+        <a href="week-01.html" class="nav-link active">第 1 周</a>
+        <a href="week-02.html" class="nav-link">第 2 周</a>
+        <a href="week-03.html" class="nav-link">第 3 周</a>
+        <a href="week-04.html" class="nav-link">第 4 周</a>
+        <a href="week-05.html" class="nav-link">第 5 周</a>
+        <a href="week-06.html" class="nav-link">第 6 周</a>
+        <a href="week-07.html" class="nav-link">第 7 周</a>
+        <a href="week-08.html" class="nav-link">第 8 周</a>
+        <a href="week-09.html" class="nav-link">第 9 周</a>
+        <a href="week-10.html" class="nav-link">第 10 周</a>
+        <a href="week-11.html" class="nav-link">第 11 周</a>
+        <a href="week-12.html" class="nav-link">第 12 周</a>
+        <a href="week-13.html" class="nav-link">第 13 周</a>
+        <a href="week-14.html" class="nav-link">第 14 周</a>
+        <a href="week-15.html" class="nav-link">第 15 周</a>
+      </nav>
+    </aside>
+    <main class="content">
+<h1>第 1 周：环境与工具链</h1>
+<blockquote>
+<p><strong>阶段</strong>：phase-00-setup | <strong>预计总时长</strong>：约 18h</p>
+</blockquote>
+<h2>本周目标</h2>
+<p>搭建可复现的 Python 研究环境，跑通第一个量化脚本，了解主流量化框架生态。</p>
+<h2>验收标准</h2>
+<ul>
+<li>[ ] <code>requirements.txt</code> 依赖全部安装成功</li>
+<li>[ ] <code>python code/phase-00-setup/hello_quant.py</code> 无报错，生成测试图</li>
+<li>[ ] 能用 pandas 画出一只股票的收盘价曲线</li>
+<li>[ ] 学习日志 ≥ 5 篇，周总结 1 篇</li>
+</ul>
+<h2>每日安排</h2>
+<h3>周一（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.5h</td>
+<td>阅读 <code>docs/learning-plan.md</code> 阶段 0、<code>code/phase-00-setup/README.md</code></td>
+</tr>
+<tr>
+<td>1h</td>
+<td>创建虚拟环境：<code>python -m venv .venv</code>，激活并 <code>pip install -r requirements.txt</code></td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>写今日日志，记录 Python 版本与 pip 输出</td>
+</tr>
+</tbody>
+</table>
+<h3>周二（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>运行 <code>hello_quant.py</code>，排查 import 或路径问题</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>阅读 pandas <a href="https://pandas.pydata.org/docs/user_guide/10min.html">10 minutes to pandas</a> 前半</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志：记录运行结果与环境信息</td>
+</tr>
+</tbody>
+</table>
+<h3>周三（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>调研量化生态：backtrader、zipline、vnpy、qlib、vectorbt（各 10 分钟）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>写对比笔记：适用场景、活跃度、A 股支持</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周四（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>用 yfinance 或 akshare 拉取 1 只股票 1 年日频数据</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>用 matplotlib 画收盘价折线图</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志：附图表路径</td>
+</tr>
+</tbody>
+</table>
+<h3>周五（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>练习 Git 基本流程：<code>status</code> → <code>add</code> → <code>commit</code>（本地即可）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>可选：配置 Jupyter / VS Code Python 解释器指向 <code>.venv</code></td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周六（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2h</td>
+<td>完善 <code>hello_quant.py</code>：输出 numpy/pandas 版本、中文字体配置</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>将周四绘图脚本整理为可复用函数，放入 <code>code/phase-00-setup/</code></td>
+</tr>
+<tr>
+<td>1h</td>
+<td>对照 <code>code/phase-00-setup/README.md</code> 任务清单逐项勾选</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>复习 pandas 10min 教程后半（GroupBy、时间序列）</td>
+</tr>
+</tbody>
+</table>
+<h3>周日（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2h</td>
+<td>撰写 <code>learning-logs/YYYY-MM/week-01-summary.md</code></td>
+</tr>
+<tr>
+<td>1h</td>
+<td>自测：脱离文档能否从零建环境并跑通脚本</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>预习第 2 周：浏览 <code>code/phase-01-data/README.md</code>、注册 tushare/akshare</td>
+</tr>
+</tbody>
+</table>
+<h2>推荐阅读</h2>
+<ul>
+<li><a href="https://www.quantstart.com/articles/">QuantStart 入门系列</a> — 选读 1–2 篇</li>
+<li>pandas 官方 10 minutes to pandas</li>
+</ul>
+<h2>产出清单</h2>
+<table>
+<thead>
+<tr>
+<th>产出</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>环境验证脚本</td>
+<td><code>code/phase-00-setup/hello_quant.py</code></td>
+</tr>
+<tr>
+<td>绘图练习</td>
+<td><code>code/phase-00-setup/plot_price.py</code>（可选）</td>
+</tr>
+<tr>
+<td>框架对比笔记</td>
+<td><code>learning-logs/</code></td>
+</tr>
+<tr>
+<td>周总结</td>
+<td><code>learning-logs/YYYY-MM/week-01-summary.md</code></td>
+</tr>
+</tbody>
+</table>
+    </main>
+  </div>
+  <footer class="site-footer">
+    由 <code>scripts/build_plan_site.py</code> 生成 ·
+    源文件 <code>docs/plan/</code> ·
+    构建时间 2026-06-07 08:15 UTC
+  </footer>
+  <div id="deploy-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2>更新 GitHub Pages</h2>
+      <div id="deploy-modal-body"></div>
+      <div class="modal-actions">
+        <button type="button" onclick="closeDeployModal()">关闭</button>
+        <button type="button" class="primary" onclick="closeDeployModal()">知道了</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

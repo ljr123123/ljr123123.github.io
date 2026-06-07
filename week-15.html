@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第 15 周：整合项目 M3 — 完整报告与结业验收 · 量化学习周计划</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/config.js" defer onerror="void 0"></script>
+  <script src="assets/deploy.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="index.html" style="color:inherit;text-decoration:none">量化学习周计划</a></h1>
+    <div class="header-actions">
+      <span id="deploy-status" class="deploy-status"></span>
+      <button id="deploy-btn" class="btn-deploy" type="button" onclick="triggerPagesUpdate()">
+        更新 GitHub Pages
+      </button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html" class="nav-link">索引</a>
+        <a href="week-01.html" class="nav-link">第 1 周</a>
+        <a href="week-02.html" class="nav-link">第 2 周</a>
+        <a href="week-03.html" class="nav-link">第 3 周</a>
+        <a href="week-04.html" class="nav-link">第 4 周</a>
+        <a href="week-05.html" class="nav-link">第 5 周</a>
+        <a href="week-06.html" class="nav-link">第 6 周</a>
+        <a href="week-07.html" class="nav-link">第 7 周</a>
+        <a href="week-08.html" class="nav-link">第 8 周</a>
+        <a href="week-09.html" class="nav-link">第 9 周</a>
+        <a href="week-10.html" class="nav-link">第 10 周</a>
+        <a href="week-11.html" class="nav-link">第 11 周</a>
+        <a href="week-12.html" class="nav-link">第 12 周</a>
+        <a href="week-13.html" class="nav-link">第 13 周</a>
+        <a href="week-14.html" class="nav-link">第 14 周</a>
+        <a href="week-15.html" class="nav-link active">第 15 周</a>
+      </nav>
+    </aside>
+    <main class="content">
+<h1>第 15 周：整合项目 M3 — 完整报告与结业验收</h1>
+<blockquote>
+<p><strong>阶段</strong>：integration（M3） | <strong>预计总时长</strong>：约 26h</p>
+</blockquote>
+<h2>本周目标</h2>
+<p>交付可演示的端到端系统：完整绩效报告、因子归因、样本外验证，完成 15 周学习计划结业。</p>
+<h2>验收标准</h2>
+<ul>
+<li>[ ] <code>python integration/run.py --config integration/config.yaml</code> 一键运行</li>
+<li>[ ] 产出近 5 年回测 HTML/Markdown 报告与因子归因</li>
+<li>[ ] 样本内/样本外指标对比写入报告</li>
+<li>[ ] <code>docs/learning-plan.md</code> 第七节自测清单全部可勾选</li>
+<li>[ ] 结业总结 1 篇</li>
+</ul>
+<h2>每日安排</h2>
+<h3>周一（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>设计报告模板：净值、回撤、月度收益、因子 IC、持仓分析</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>选定输出格式（HTML + matplotlib 静态图）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周二（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现 <code>integration/reports/</code> 报告生成器</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周三（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>样本外验证接入报告</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>添加回测假设说明（成本、滑点、成交规则）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周四（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>因子归因：各子因子 IC、分组收益贡献</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>敏感性分析：换一组因子权重看结论稳健性</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周五（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>完善 <code>integration/README.md</code>：安装、运行、输出说明</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>录制或文字版「演示脚本」（如何向别人展示项目）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周六（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3h</td>
+<td>全量回归测试：从零 clone 仓库能否按 README 跑通</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>代码清理：删除调试代码、统一风格、补关键注释</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>对照 <code>docs/backtest-checklist.md</code> 最终自查</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>标记已知局限与未来改进（成分股、财务滞后等）</td>
+</tr>
+</tbody>
+</table>
+<h3>周日（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2h</td>
+<td>完成 <code>docs/learning-plan.md</code> 自测清单逐项验证</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>撰写结业总结：收获、薄弱点、下一步（实盘/新因子/ML）</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>归档：<code>learning-logs/YYYY-MM/week-15-summary.md</code> + 15 周总回顾</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>可选：更新 <code>docs/roadmap.md</code> 标注已完成节点</td>
+</tr>
+</tbody>
+</table>
+<h2>结业自测（必须全部通过）</h2>
+<ul>
+<li>[ ] 能解释 T+1 对回测成交假设的影响</li>
+<li>[ ] 能手工计算一只股票的 20 日动量因子</li>
+<li>[ ] 能说出 IC 与 Rank IC 的区别</li>
+<li>[ ] 能列出 3 种前视偏差场景</li>
+<li>[ ] 能运行样本内 / 样本外分离回测</li>
+<li>[ ] 能绘制净值曲线与回撤曲线</li>
+<li>[ ] 完成整合项目并通过自检</li>
+</ul>
+<h2>毕业后可选方向</h2>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>深化因子</td>
+<td>加入质量、成长因子；财务数据 pipeline</td>
+</tr>
+<tr>
+<td>机器学习</td>
+<td>López de Prado 特征重要性、Purged K-Fold</td>
+</tr>
+<tr>
+<td>实盘</td>
+<td>选定券商 API，小资金验证执行偏差</td>
+</tr>
+<tr>
+<td>美股扩展</td>
+<td>换数据源，对比 A 股因子溢价差异</td>
+</tr>
+</tbody>
+</table>
+<h2>产出清单</h2>
+<table>
+<thead>
+<tr>
+<th>产出</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一键运行</td>
+<td><code>integration/run.py</code></td>
+</tr>
+<tr>
+<td>完整报告</td>
+<td><code>integration/reports/latest/</code></td>
+</tr>
+<tr>
+<td>项目文档</td>
+<td><code>integration/README.md</code></td>
+</tr>
+<tr>
+<td>结业总结</td>
+<td><code>learning-logs/YYYY-MM/graduation-summary.md</code></td>
+</tr>
+</tbody>
+</table>
+    </main>
+  </div>
+  <footer class="site-footer">
+    由 <code>scripts/build_plan_site.py</code> 生成 ·
+    源文件 <code>docs/plan/</code> ·
+    构建时间 2026-06-07 08:15 UTC
+  </footer>
+  <div id="deploy-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2>更新 GitHub Pages</h2>
+      <div id="deploy-modal-body"></div>
+      <div class="modal-actions">
+        <button type="button" onclick="closeDeployModal()">关闭</button>
+        <button type="button" class="primary" onclick="closeDeployModal()">知道了</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

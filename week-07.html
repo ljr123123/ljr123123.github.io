@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第 7 周：均值-方差优化与风险指标 · 量化学习周计划</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/config.js" defer onerror="void 0"></script>
+  <script src="assets/deploy.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="index.html" style="color:inherit;text-decoration:none">量化学习周计划</a></h1>
+    <div class="header-actions">
+      <span id="deploy-status" class="deploy-status"></span>
+      <button id="deploy-btn" class="btn-deploy" type="button" onclick="triggerPagesUpdate()">
+        更新 GitHub Pages
+      </button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html" class="nav-link">索引</a>
+        <a href="week-01.html" class="nav-link">第 1 周</a>
+        <a href="week-02.html" class="nav-link">第 2 周</a>
+        <a href="week-03.html" class="nav-link">第 3 周</a>
+        <a href="week-04.html" class="nav-link">第 4 周</a>
+        <a href="week-05.html" class="nav-link">第 5 周</a>
+        <a href="week-06.html" class="nav-link">第 6 周</a>
+        <a href="week-07.html" class="nav-link active">第 7 周</a>
+        <a href="week-08.html" class="nav-link">第 8 周</a>
+        <a href="week-09.html" class="nav-link">第 9 周</a>
+        <a href="week-10.html" class="nav-link">第 10 周</a>
+        <a href="week-11.html" class="nav-link">第 11 周</a>
+        <a href="week-12.html" class="nav-link">第 12 周</a>
+        <a href="week-13.html" class="nav-link">第 13 周</a>
+        <a href="week-14.html" class="nav-link">第 14 周</a>
+        <a href="week-15.html" class="nav-link">第 15 周</a>
+      </nav>
+    </aside>
+    <main class="content">
+<h1>第 7 周：均值-方差优化与风险指标</h1>
+<blockquote>
+<p><strong>阶段</strong>：phase-03-portfolio | <strong>预计总时长</strong>：约 20h</p>
+</blockquote>
+<h2>本周目标</h2>
+<p>从因子得分到组合权重：实现 MVO 优化器，计算核心风险指标。</p>
+<h2>验收标准</h2>
+<ul>
+<li>[ ] <code>mean_variance.py</code> 给定预期收益与协方差矩阵，输出最优权重</li>
+<li>[ ] <code>risk_metrics.py</code> 计算年化波动率、最大回撤、VaR（历史法）</li>
+<li>[ ] <code>equal_weight_baseline.py</code> 等权基准可对比</li>
+</ul>
+<h2>每日安排</h2>
+<h3>周一（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>复习 MVO：(\max_w w'\mu - \frac{\lambda}{2} w'\Sigma w)，s.t. (\sum w = 1)</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>理解协方差矩阵估计：样本协方差、收缩估计（Ledoit-Wolf 概念）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周二（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现 <code>mean_variance.py</code>（可用 scipy.optimize）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周三（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>用因子得分映射为预期收益（简化：截面 z-score 排名）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>用历史收益估计协方差</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周四（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>夏普比率：((E[r_p]-r_f)/\sigma_p)；最大回撤定义</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>VaR：历史分位数法</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周五（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现 <code>risk_metrics.py</code></td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周六（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3h</td>
+<td>实现 <code>equal_weight_baseline.py</code>，与 MVO 组合对比收益/风险</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>实验：λ 参数对权重集中度的影响</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>阅读 <em>Quantitative Equity Portfolio Management</em> MVO 章节</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>可视化：有效前沿（可选）</td>
+</tr>
+</tbody>
+</table>
+<h3>周日（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2h</td>
+<td>周总结：MVO 在 A 股小样本下的局限</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>预习：约束优化（单票上限、行业偏离）</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>检查数值稳定性：协方差矩阵正定性</td>
+</tr>
+</tbody>
+</table>
+<h2>核心公式</h2>
+<ul>
+<li>组合收益：(r_p = \sum w_i r_i)</li>
+<li>组合方差：(\sigma_p^2 = w'\Sigma w)</li>
+<li>最大回撤：净值峰值到后续最低点的最大跌幅</li>
+</ul>
+<h2>产出清单</h2>
+<table>
+<thead>
+<tr>
+<th>产出</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MVO 优化</td>
+<td><code>code/phase-03-portfolio/mean_variance.py</code></td>
+</tr>
+<tr>
+<td>风险指标</td>
+<td><code>code/phase-03-portfolio/risk_metrics.py</code></td>
+</tr>
+<tr>
+<td>等权基准</td>
+<td><code>code/phase-03-portfolio/equal_weight_baseline.py</code></td>
+</tr>
+</tbody>
+</table>
+    </main>
+  </div>
+  <footer class="site-footer">
+    由 <code>scripts/build_plan_site.py</code> 生成 ·
+    源文件 <code>docs/plan/</code> ·
+    构建时间 2026-06-07 08:15 UTC
+  </footer>
+  <div id="deploy-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2>更新 GitHub Pages</h2>
+      <div id="deploy-modal-body"></div>
+      <div class="modal-actions">
+        <button type="button" onclick="closeDeployModal()">关闭</button>
+        <button type="button" class="primary" onclick="closeDeployModal()">知道了</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

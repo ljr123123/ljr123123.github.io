@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第 12 周：纸面交易与监控 · 量化学习周计划</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/config.js" defer onerror="void 0"></script>
+  <script src="assets/deploy.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="index.html" style="color:inherit;text-decoration:none">量化学习周计划</a></h1>
+    <div class="header-actions">
+      <span id="deploy-status" class="deploy-status"></span>
+      <button id="deploy-btn" class="btn-deploy" type="button" onclick="triggerPagesUpdate()">
+        更新 GitHub Pages
+      </button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html" class="nav-link">索引</a>
+        <a href="week-01.html" class="nav-link">第 1 周</a>
+        <a href="week-02.html" class="nav-link">第 2 周</a>
+        <a href="week-03.html" class="nav-link">第 3 周</a>
+        <a href="week-04.html" class="nav-link">第 4 周</a>
+        <a href="week-05.html" class="nav-link">第 5 周</a>
+        <a href="week-06.html" class="nav-link">第 6 周</a>
+        <a href="week-07.html" class="nav-link">第 7 周</a>
+        <a href="week-08.html" class="nav-link">第 8 周</a>
+        <a href="week-09.html" class="nav-link">第 9 周</a>
+        <a href="week-10.html" class="nav-link">第 10 周</a>
+        <a href="week-11.html" class="nav-link">第 11 周</a>
+        <a href="week-12.html" class="nav-link active">第 12 周</a>
+        <a href="week-13.html" class="nav-link">第 13 周</a>
+        <a href="week-14.html" class="nav-link">第 14 周</a>
+        <a href="week-15.html" class="nav-link">第 15 周</a>
+      </nav>
+    </aside>
+    <main class="content">
+<h1>第 12 周：纸面交易与监控</h1>
+<blockquote>
+<p><strong>阶段</strong>：phase-05-execution | <strong>预计总时长</strong>：约 22h</p>
+</blockquote>
+<h2>本周目标</h2>
+<p>完成纸面交易演练与监控骨架，通过阶段 5 验收，为整合项目做准备。</p>
+<h2>验收标准</h2>
+<ul>
+<li>[ ] <code>paper_trading.py</code> 记录每日信号、目标权重、模拟成交</li>
+<li>[ ] <code>monitor.py</code> 骨架：仓位、PnL、异常告警占位</li>
+<li>[ ] 纸面交易周记 1 篇（假设每日收盘出信号、次日开盘调仓）</li>
+<li>[ ] 合规与风控清单定稿</li>
+</ul>
+<h2>每日安排</h2>
+<h3>周一（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>纸面交易流程：数据更新 → 因子 → 优化 → 订单 → 记录</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>与回测的差异：真实滑点、停牌、涨跌停拒单</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周二（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现 <code>paper_trading.py</code>：日志式记录 trades / positions</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周三（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>监控项：净敞口、行业集中度、单日 PnL 异常</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>告警渠道调研：邮件、钉钉、Telegram（占位）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周四（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现 <code>monitor.py</code> 骨架</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周五（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>用最近 5 个交易日数据跑纸面交易</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>对比纸面与回测结果差异</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周六（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3h</td>
+<td>撰写纸面交易周记：每日决策、偏差分析</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>完善 <code>docs/risk-compliance-checklist.md</code></td>
+</tr>
+<tr>
+<td>1h</td>
+<td>更新 <code>code/phase-05-execution/README.md</code></td>
+</tr>
+<tr>
+<td>1h</td>
+<td>阶段 5 总验收</td>
+</tr>
+</tbody>
+</table>
+<h3>周日（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2h</td>
+<td>15 周学习自测清单（<code>docs/learning-plan.md</code> 第七节）</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>周总结</td>
+</tr>
+<tr>
+<td>3h</td>
+<td>阅读 <code>integration/README.md</code>，规划模块迁移顺序</td>
+</tr>
+</tbody>
+</table>
+<h2>产出清单</h2>
+<table>
+<thead>
+<tr>
+<th>产出</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纸面交易</td>
+<td><code>code/phase-05-execution/paper_trading.py</code></td>
+</tr>
+<tr>
+<td>监控骨架</td>
+<td><code>code/phase-05-execution/monitor.py</code></td>
+</tr>
+<tr>
+<td>纸面周记</td>
+<td><code>learning-logs/</code></td>
+</tr>
+<tr>
+<td>风控清单</td>
+<td><code>docs/risk-compliance-checklist.md</code></td>
+</tr>
+</tbody>
+</table>
+    </main>
+  </div>
+  <footer class="site-footer">
+    由 <code>scripts/build_plan_site.py</code> 生成 ·
+    源文件 <code>docs/plan/</code> ·
+    构建时间 2026-06-07 08:15 UTC
+  </footer>
+  <div id="deploy-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2>更新 GitHub Pages</h2>
+      <div id="deploy-modal-body"></div>
+      <div class="modal-actions">
+        <button type="button" onclick="closeDeployModal()">关闭</button>
+        <button type="button" class="primary" onclick="closeDeployModal()">知道了</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

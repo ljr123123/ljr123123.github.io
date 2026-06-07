@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第 4 周：收益率与动量因子 · 量化学习周计划</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/config.js" defer onerror="void 0"></script>
+  <script src="assets/deploy.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="index.html" style="color:inherit;text-decoration:none">量化学习周计划</a></h1>
+    <div class="header-actions">
+      <span id="deploy-status" class="deploy-status"></span>
+      <button id="deploy-btn" class="btn-deploy" type="button" onclick="triggerPagesUpdate()">
+        更新 GitHub Pages
+      </button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html" class="nav-link">索引</a>
+        <a href="week-01.html" class="nav-link">第 1 周</a>
+        <a href="week-02.html" class="nav-link">第 2 周</a>
+        <a href="week-03.html" class="nav-link">第 3 周</a>
+        <a href="week-04.html" class="nav-link active">第 4 周</a>
+        <a href="week-05.html" class="nav-link">第 5 周</a>
+        <a href="week-06.html" class="nav-link">第 6 周</a>
+        <a href="week-07.html" class="nav-link">第 7 周</a>
+        <a href="week-08.html" class="nav-link">第 8 周</a>
+        <a href="week-09.html" class="nav-link">第 9 周</a>
+        <a href="week-10.html" class="nav-link">第 10 周</a>
+        <a href="week-11.html" class="nav-link">第 11 周</a>
+        <a href="week-12.html" class="nav-link">第 12 周</a>
+        <a href="week-13.html" class="nav-link">第 13 周</a>
+        <a href="week-14.html" class="nav-link">第 14 周</a>
+        <a href="week-15.html" class="nav-link">第 15 周</a>
+      </nav>
+    </aside>
+    <main class="content">
+<h1>第 4 周：收益率与动量因子</h1>
+<blockquote>
+<p><strong>阶段</strong>：phase-02-factors | <strong>预计总时长</strong>：约 20h</p>
+</blockquote>
+<h2>本周目标</h2>
+<p>掌握收益率计算方式，实现动量因子，理解因子研究的基本范式。</p>
+<h2>验收标准</h2>
+<ul>
+<li>[ ] <code>returns.py</code> 实现简单收益、对数收益、超额收益</li>
+<li>[ ] <code>momentum.py</code> 实现 N 日动量（如 20 日、60 日）</li>
+<li>[ ] 对动量因子完成初步分布检查（截面均值、分位数）</li>
+</ul>
+<h2>每日安排</h2>
+<h3>周一（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>阅读：简单收益 (r_t = P_t/P_{t-1}-1) vs 对数收益 (\ln(P_t/P_{t-1}))</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>超额收益：相对无风险利率或市场指数</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周二（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现 <code>returns.py</code>，用面板数据验证</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周三（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>阅读 Jegadeesh &amp; Titman (1993) 动量论文摘要</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>理解动量因子定义：过去 N 日累计收益（跳过最近 M 日避免微观结构噪声）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周四（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现 <code>momentum.py</code>：可配置 lookback / skip 参数</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周五（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>截面因子值检查：每日 mean/std/分位数时序</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>排查极端值：新股、复牌、ST</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周六（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3h</td>
+<td>对 2015–今全样本计算 20 日动量，输出因子面板</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>可视化：随机 5 个交易日的因子直方图</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>阅读 <em>Active Portfolio Management</em> 第 1–2 章（因子预测力概念）</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>记录数据对齐细节（因子计算日 vs 收益实现日）</td>
+</tr>
+</tbody>
+</table>
+<h3>周日（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2h</td>
+<td>周总结：动量因子实现中的 3 个技术决策</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>预习 IC / Rank IC 定义（Grinold &amp; Kahn）</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>检查代码向量化效率，避免逐行循环</td>
+</tr>
+</tbody>
+</table>
+<h2>推荐阅读</h2>
+<ul>
+<li>Jegadeesh &amp; Titman (1993), <em>Returns to Buying Winners and Selling Losers</em></li>
+<li><em>Active Portfolio Management</em>（Grinold &amp; Kahn）第 1–3 章</li>
+</ul>
+<h2>产出清单</h2>
+<table>
+<thead>
+<tr>
+<th>产出</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>收益计算</td>
+<td><code>code/phase-02-factors/returns.py</code></td>
+</tr>
+<tr>
+<td>动量因子</td>
+<td><code>code/phase-02-factors/momentum.py</code></td>
+</tr>
+<tr>
+<td>因子面板</td>
+<td><code>data/phase-02/momentum.parquet</code>（可选）</td>
+</tr>
+</tbody>
+</table>
+    </main>
+  </div>
+  <footer class="site-footer">
+    由 <code>scripts/build_plan_site.py</code> 生成 ·
+    源文件 <code>docs/plan/</code> ·
+    构建时间 2026-06-07 08:15 UTC
+  </footer>
+  <div id="deploy-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2>更新 GitHub Pages</h2>
+      <div id="deploy-modal-body"></div>
+      <div class="modal-actions">
+        <button type="button" onclick="closeDeployModal()">关闭</button>
+        <button type="button" class="primary" onclick="closeDeployModal()">知道了</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

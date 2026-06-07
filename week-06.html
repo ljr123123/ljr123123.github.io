@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第 6 周：多因子扩展与中性化 · 量化学习周计划</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/config.js" defer onerror="void 0"></script>
+  <script src="assets/deploy.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="index.html" style="color:inherit;text-decoration:none">量化学习周计划</a></h1>
+    <div class="header-actions">
+      <span id="deploy-status" class="deploy-status"></span>
+      <button id="deploy-btn" class="btn-deploy" type="button" onclick="triggerPagesUpdate()">
+        更新 GitHub Pages
+      </button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html" class="nav-link">索引</a>
+        <a href="week-01.html" class="nav-link">第 1 周</a>
+        <a href="week-02.html" class="nav-link">第 2 周</a>
+        <a href="week-03.html" class="nav-link">第 3 周</a>
+        <a href="week-04.html" class="nav-link">第 4 周</a>
+        <a href="week-05.html" class="nav-link">第 5 周</a>
+        <a href="week-06.html" class="nav-link active">第 6 周</a>
+        <a href="week-07.html" class="nav-link">第 7 周</a>
+        <a href="week-08.html" class="nav-link">第 8 周</a>
+        <a href="week-09.html" class="nav-link">第 9 周</a>
+        <a href="week-10.html" class="nav-link">第 10 周</a>
+        <a href="week-11.html" class="nav-link">第 11 周</a>
+        <a href="week-12.html" class="nav-link">第 12 周</a>
+        <a href="week-13.html" class="nav-link">第 13 周</a>
+        <a href="week-14.html" class="nav-link">第 14 周</a>
+        <a href="week-15.html" class="nav-link">第 15 周</a>
+      </nav>
+    </aside>
+    <main class="content">
+<h1>第 6 周：多因子扩展与中性化</h1>
+<blockquote>
+<p><strong>阶段</strong>：phase-02-factors | <strong>预计总时长</strong>：约 22h</p>
+</blockquote>
+<h2>本周目标</h2>
+<p>实现价值、波动率因子，掌握行业/市值中性化，建立多重检验意识。</p>
+<h2>验收标准</h2>
+<ul>
+<li>[ ] 至少 3 个因子实现：动量 + 价值/波动率 + 规模（任选）</li>
+<li>[ ] <code>neutralize.py</code> 完成行业、市值中性化</li>
+<li>[ ] 笔记：Bonferroni 校正与 Deflated Sharpe 概念</li>
+<li>[ ] 对 1 个中性化后因子重复 IC + 分层验收</li>
+</ul>
+<h2>每日安排</h2>
+<h3>周一（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>阅读 Fama &amp; French (1993) 三因子模型摘要</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>价值因子：EP（盈利/市值）、BP（账面/市值）定义</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周二（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现 <code>value.py</code>（可用简化财务数据或 proxy）</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志：财务数据公告日滞后处理</td>
+</tr>
+</tbody>
+</table>
+<h3>周三（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>实现 <code>volatility.py</code>：过去 N 日收益标准差</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>规模因子：log(市值) 截面排名</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周四（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1h</td>
+<td>中性化原理：截面回归残差 (f = \beta_1 \cdot \text{industry} + \beta_2 \cdot \log(\text{mktcap}) + \epsilon)</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>阅读 Grinold &amp; Kahn 关于风险因子与 alpha 因子</td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周五（≤2h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5h</td>
+<td>实现 <code>neutralize.py</code></td>
+</tr>
+<tr>
+<td>0.5h</td>
+<td>日志</td>
+</tr>
+</tbody>
+</table>
+<h3>周六（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3h</td>
+<td>对 3 个因子分别跑 IC + 分层，对比中性化前后</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>阅读 López de Prado <em>Advances in Financial Machine Learning</em> 多重检验章节</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>笔记：测试 20 个因子时为何容易过拟合</td>
+</tr>
+<tr>
+<td>1h</td>
+<td>整理 <code>code/phase-02-factors/README.md</code></td>
+</tr>
+</tbody>
+</table>
+<h3>周日（≤8h）</h3>
+<table>
+<thead>
+<tr>
+<th>时长</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2h</td>
+<td>阶段 2 总验收：对照 <code>docs/learning-plan.md</code> 清单</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>周总结</td>
+</tr>
+<tr>
+<td>2h</td>
+<td>预习阶段 3：MVO 均值-方差优化公式</td>
+</tr>
+</tbody>
+</table>
+<h2>推荐阅读</h2>
+<ul>
+<li>Fama &amp; French (1993) — 三因子模型</li>
+<li>Frazzini &amp; Pedersen (2014) — Betting Against Beta</li>
+<li>López de Prado — 多重检验与回测过拟合</li>
+</ul>
+<h2>产出清单</h2>
+<table>
+<thead>
+<tr>
+<th>产出</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>价值因子</td>
+<td><code>code/phase-02-factors/value.py</code></td>
+</tr>
+<tr>
+<td>波动率因子</td>
+<td><code>code/phase-02-factors/volatility.py</code></td>
+</tr>
+<tr>
+<td>中性化</td>
+<td><code>code/phase-02-factors/neutralize.py</code></td>
+</tr>
+<tr>
+<td>过拟合笔记</td>
+<td><code>learning-logs/</code></td>
+</tr>
+</tbody>
+</table>
+    </main>
+  </div>
+  <footer class="site-footer">
+    由 <code>scripts/build_plan_site.py</code> 生成 ·
+    源文件 <code>docs/plan/</code> ·
+    构建时间 2026-06-07 08:15 UTC
+  </footer>
+  <div id="deploy-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2>更新 GitHub Pages</h2>
+      <div id="deploy-modal-body"></div>
+      <div class="modal-actions">
+        <button type="button" onclick="closeDeployModal()">关闭</button>
+        <button type="button" class="primary" onclick="closeDeployModal()">知道了</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
